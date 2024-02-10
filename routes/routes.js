@@ -2,10 +2,10 @@ const express=require("express");
 const router=express.Router();
 
 const {auth,isStudent,isAdmin}=require("../middleware/auth");
-const {login,signup} = require("../Controllers/auth.js");
-const {forgotpassword}=require("../Controllers/forgotpassword");
-const {resetpassword}=require("../Controllers/resetPassword");
-const {fileUpload}=require("../Controllers/fileUpload");
+const {login,signup} = require("../controllers/auth.js");
+const {forgotpassword}=require("../controllers/forgotpassword.js");
+const {resetpassword}=require("../controllers/resetPassword.js");
+const {fileUpload}=require("../controllers/fileUpload.js");
 
 router.post("/login",login);
 router.post("/signup",signup);
