@@ -23,8 +23,8 @@ const cloudinary=require("./config/cloudinary");
 cloudinary.cloudinaryConnect();
 
 //api route
-const Upload=require("./routes/FileUpload");
-app.use('/api/v1/upload',Upload);
+const user=require("./routes/routes");
+app.use('/api/v1',user);
 
 //activate server
 app.listen(PORT,()=>{
