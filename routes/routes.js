@@ -6,12 +6,16 @@ const { login, signup } = require("../controllers/auth");
 const { forgotpassword } = require("../controllers/forgotpassword");
 const { resetpassword } = require("../controllers/resetPassword");
 const { fileUpload } = require("../controllers/fileUpload");
+const { classes } = require("../controllers/fetchclasses");
+const { createclass } = require("../controllers/createclass");
 
 router.post("/login", login);
 router.post("/signup", signup);
 router.post("/forgotpassword", forgotpassword)
 router.post("/resetpassword", resetpassword);
 router.post("/fileUpload", fileUpload);
+router.get("/classes", auth, classes)
+router.post("/createclass", auth, createclass);
 
 router.get("/student", auth, isStudent, (req, res) => {
     res.json({

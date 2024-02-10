@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userschema = new mongoose.Schema({
+const teacherSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -10,6 +10,7 @@ const userschema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
+        unique: true,
     },
     password: {
         type: String,
@@ -17,7 +18,8 @@ const userschema = new mongoose.Schema({
     },
     role: {
         type: String,
-        enum: ['Teacher', 'Student'],
+        enum: ['Teacher'],
+        default: 'Teacher',
     },
     classes: [{
         type: mongoose.Schema.Types.ObjectId,
@@ -29,4 +31,4 @@ const userschema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model('user', userschema);
+module.exports = mongoose.model('Teacher', teacherSchema);
