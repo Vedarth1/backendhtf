@@ -2,7 +2,7 @@ const express=require("express");
 const router=express.Router();
 
 const {auth,isStudent,isAdmin}=require("../middleware/auth");
-const {login,signup} = require("../Controllers/Auth");
+const {login,signup} = require("../Controllers/Auth.js");
 const {forgotpassword}=require("../Controllers/forgotpassword");
 const {resetpassword}=require("../Controllers/resetPassword");
 const {fileUpload}=require("../Controllers/fileUpload");
