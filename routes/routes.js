@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-const { auth, isStudent, isAdmin } = require("../middleware/auth.js");
-const { login, signup } = require("../controllers/auth.js");
-const { forgotpassword } = require("../controllers/forgotpassword.js");
-const { resetpassword } = require("../controllers/resetPassword.js");
-const { fileUpload } = require("../controllers/fileUpload.js");
+const { auth, isStudent, isAdmin } = require("../middleware/auth");
+const { login, signup } = require("../controllers/auth");
+const { forgotpassword } = require("../controllers/forgotpassword");
+const { resetpassword } = require("../controllers/resetPassword");
+const { fileUpload } = require("../controllers/fileUpload");
 
 router.post("/login", login);
 router.post("/signup", signup);
